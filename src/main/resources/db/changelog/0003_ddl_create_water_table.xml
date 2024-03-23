@@ -1,0 +1,23 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="0003_ddl_create_water_table" author="Katya K.">
+        <createTable schemaName="public" tableName="water" remarks="Хранение воды">
+            <column name="id" type="bigserial" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="water_pkey" nullable="false"/>
+            </column>
+            <column name="name" type="varchar" remarks="Название воды"/>
+            <column name="price" type="numeric" remarks="Стоимость воды"/>
+            <column name="description" type="varchar" remarks="Характеристики"/>
+            <column name="vendor_code" type="integer" remarks="Артикул"/>
+            <column name="is_stock" type="boolean" remarks="Наличие"/>
+            <column name="displacement" type="double" remarks="Литраж"/>
+
+        </createTable>
+        <rollback>
+            <dropTable tableName="water"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

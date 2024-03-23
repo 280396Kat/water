@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/0001_ddl_create_tea_table.xml
+  - include:
+      file: db/changelog/0002_ddl_create_coffee_table.xml
+  - include:
+      file: db/changelog/0003_ddl_create_water_table.xml
+  - include:
+      file: db/changelog/0004_ddl_create_disposable_tableware_table.xml
+  - include:
+      file: db/changelog/0005_ddl_create_pumps_table.xml
+  - include:
+      file: db/changelog/0006_ddl_create_cup_holders_table.xml
+  - include:
+      file: db/changelog/0007_ddl_create_bottle_racks_table.xml
