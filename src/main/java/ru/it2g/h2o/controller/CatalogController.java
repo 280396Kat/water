@@ -46,7 +46,7 @@ public class CatalogController {
         return waterService.getAllIsStockUpToFiveLiters();
     }
 
-    @GetMapping("/water-nineteen-liters")
+    @GetMapping("/water-nineteen-liter")
     public List<WaterDto> getAllIsStockNineteenLiters() {
         return waterService.getAllIsStockNineteenLiters();
     }

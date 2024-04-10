@@ -14,10 +14,11 @@ public interface TeaRepository extends JpaRepository<Tea, Long> {
     @Query(value = "select * from tea where is_stock = true", nativeQuery = true)
     List<Tea> findAllIsStockTea();
 
+    @Query(value = "select * from tea where is_stock = true", nativeQuery = true)
     List<Tea> findTeaInfoByFilter(@Param("categoryId") Long categoryId,
                                       @Param("from") BigDecimal from,
                                       @Param("to") BigDecimal to,
                                       @Param("name") String name,
-                                      @Param("vendorCode") String vendorCode
+                                      @Param("vendorCode") Integer vendorCode
     );
 }

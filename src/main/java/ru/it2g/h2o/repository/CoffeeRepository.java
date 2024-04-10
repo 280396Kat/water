@@ -14,10 +14,11 @@ public interface CoffeeRepository extends JpaRepository<Coffee, Long> {
     @Query(value = "select * from coffee where is_stock = true", nativeQuery = true)
     List<Coffee> findAllIsStockCoffee();
 
+    @Query(value = "select * from coffee where is_stock = true", nativeQuery = true)
     List<Coffee> findCoffeeInfoByFilter(@Param("categoryId") Long categoryId,
                                               @Param("from") BigDecimal from,
                                               @Param("to") BigDecimal to,
                                               @Param("name") String name,
-                                              @Param("vendorCode") String vendorCode
+                                              @Param("vendorCode") Integer vendorCode
     );
 }

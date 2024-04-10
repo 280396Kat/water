@@ -17,8 +17,9 @@ public interface CatalogRepository extends JpaRepository<Catalog, Long> {
            "left join disposable_tableware on catalog.id = disposable_tableware.fk_catalog_id " +
            "left join tea on catalog.id = tea.fk_catalog_id " +
            "left join water on catalog.id = water.fk_catalog_id " +
-           "where "
+           "where ", nativeQuery = true
    )
+
 
    Optional<Catalog> findCatalogInfoByFilter(@Param("categoryId") Long categoryId,
                                              @Param("from") BigDecimal from,

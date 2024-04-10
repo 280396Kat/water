@@ -14,10 +14,11 @@ public interface DisposableTablewareRepository extends JpaRepository<DisposableT
     @Query(value = "select * from disposable_tableware where is_stock = true", nativeQuery = true)
     List<DisposableTableware> findAllIsStockDisposableTableware();
 
+    @Query(value = "select * from disposable_tableware where is_stock = true", nativeQuery = true)
     List<DisposableTableware> findDisposableTablewareInfoByFilter(@Param("categoryId") Long categoryId,
                                                 @Param("from") BigDecimal from,
                                                 @Param("to") BigDecimal to,
                                                 @Param("name") String name,
-                                                @Param("vendorCode") String vendorCode
+                                                @Param("vendorCode") Integer vendorCode
     );
 }

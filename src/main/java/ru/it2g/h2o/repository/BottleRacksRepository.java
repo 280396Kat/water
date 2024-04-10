@@ -14,6 +14,7 @@ public interface BottleRacksRepository extends JpaRepository<BottleRacks, Long> 
     @Query(value = "select * from bottle_racks where is_stock = true", nativeQuery = true)
     List<BottleRacks> findAllIsStockBottleRacks();
 
+    @Query(value = "select * from bottle_racks where is_stock = true", nativeQuery = true)
     List<BottleRacks> findBottleRacksInfoByFilter(@Param("categoryId") Long categoryId,
                                               @Param("from") BigDecimal from,
                                               @Param("to") BigDecimal to,

@@ -27,6 +27,6 @@ public class CoffeeServiceImpl implements CoffeeService {
                         .description(entity.getDescription())
                         .vendorCode(entity.getVendorCode())
                         .build())
-                .collect(Collectors.toList());
+                .collect(Collectors.toList());.
     }
 }

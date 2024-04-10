@@ -19,11 +19,12 @@ public interface WaterRepository extends JpaRepository<Water, Long> {
     @Query(value = "select * from water where is_stock = true AND displacement = 19", nativeQuery = true)
     List<Water> findAllIsStockNineteenLiters();
 
+    @Query(value = "select * from water where is_stock = true", nativeQuery = true)
     List<Water> findWaterInfoByFilter(@Param("categoryId") Long categoryId,
                                   @Param("from") BigDecimal from,
                                   @Param("to") BigDecimal to,
                                   @Param("name") String name,
-                                  @Param("vendorCode") String vendorCode
+                                  @Param("vendorCode") Integer vendorCode
     );
 }
 

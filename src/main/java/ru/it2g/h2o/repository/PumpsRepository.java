@@ -14,10 +14,11 @@ public interface PumpsRepository extends JpaRepository<Pumps, Long> {
     @Query(value = "select * from pumps where is_stock = true", nativeQuery = true)
     List<Pumps> findAllIsStockPumps();
 
+    @Query(value = "select * from pumps where is_stock = true", nativeQuery = true)
     List<Pumps> findPumpsInfoByFilter(@Param("categoryId") Long categoryId,
                                                                   @Param("from") BigDecimal from,
                                                                   @Param("to") BigDecimal to,
                                                                   @Param("name") String name,
-                                                                  @Param("vendorCode") String vendorCode
+                                                                  @Param("vendorCode") Integer vendorCode
     );
 }
