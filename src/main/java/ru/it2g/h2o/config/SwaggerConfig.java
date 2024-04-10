@@ -30,7 +30,6 @@ public class SwaggerConfig {
 
     private final ServletContext servletContext;
 
-
     @Bean
     public Docket api() {
         String host = servletContext.getContextPath();
