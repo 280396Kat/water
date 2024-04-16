@@ -12,42 +12,25 @@ import java.util.Objects;
 @Getter
 @Builder
 @Entity
-@Table(name = "users")
-public class User {
+public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
-
-    private String password;
-
-    private String phoneNumber;
-
-    private String mail;
-
-    private String roles;
-
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "user_cart",
-            joinColumns = { @JoinColumn(name = "user_id") },
-            inverseJoinColumns = { @JoinColumn(name = "cart_id") }
-    )
-    private List<Cart> carts;
+    @ManyToMany(mappedBy = "cart")
+    private List<User> users;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id);
+        Cart cart = (Cart) o;
+        return Objects.equals(id, cart.id);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id);
     }
-
 }

@@ -15,3 +15,7 @@ databaseChangeLog:
       file: db/changelog/0007_ddl_create_bottle_racks_table.xml
   - include:
       file: db/changelog/0008_ddl_create_users_table.xml
+  - include:
+      file: db/changelog/0009_ddl_create_cart_table.xml
+  - include:
+      file: db/changelog/0010_ddl_create_cart_product_table.xml
