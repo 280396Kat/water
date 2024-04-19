@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import ru.it2g.h2o.dto.baseuser.UserDto;
 import ru.it2g.h2o.entity.User;
 import ru.it2g.h2o.repository.UserRepository;
+import ru.it2g.h2o.service.UserEventPublisher;
 import ru.it2g.h2o.service.auth.AuthService;
 import ru.it2g.h2o.service.auth.UserService;
 
@@ -19,13 +20,15 @@ public class UserServiceImpl implements UserService, AuthService {
 
     private final PasswordEncoder passwordEncoder;
 
+    private final UserEventPublisher userEventPublisher;
+
     @Override
     public Optional<User> getByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 
     @Override
-    public Long createOrUpdateUser(UserDto userDto) {
+    public Long createOrUpdateUser(UserDto userDto) {  // регистрация или обновление данных о пользователе
         return Optional.ofNullable(userDto.getUsername())
                 .map(username ->
                         userRepository.findByUsername(userDto.getUsername())
@@ -37,7 +40,9 @@ public class UserServiceImpl implements UserService, AuthService {
                                                 user.setPassword(password);
                                                 user.setPassword(passwordEncoder.encode(password));
                                             });
-                                    return userRepository.save(user).getId();
+                                    User userSave = userRepository.save(user);
+                                    userEventPublisher.publishUserRegisteredEvent(userSave);
+                                    return userSave.getId();
                                 }).orElseGet(() -> {
                                     User createUser = toEntity(userDto);
                                     Optional.ofNullable(userDto.getPassword())

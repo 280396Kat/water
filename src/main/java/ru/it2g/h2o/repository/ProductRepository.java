@@ -3,12 +3,12 @@ package ru.it2g.h2o.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import ru.it2g.h2o.entity.Catalog;
+import ru.it2g.h2o.entity.Product;
 
 import java.math.BigDecimal;
 import java.util.Optional;
 
-public interface CatalogRepository extends JpaRepository<Catalog, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long> {
 
    @Query(value = "select * from catalog " +
            "left join bottlte_racks on catalog.id = bottlte_racks.fk_catalog_id " +
@@ -21,7 +21,7 @@ public interface CatalogRepository extends JpaRepository<Catalog, Long> {
    )
 
 
-   Optional<Catalog> findCatalogInfoByFilter(@Param("categoryId") Long categoryId,
+   Optional<Product> findCatalogInfoByFilter(@Param("productId") Long productId,
                                              @Param("from") BigDecimal from,
                                              @Param("to") BigDecimal to,
                                              @Param("name") String name,

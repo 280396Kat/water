@@ -1,0 +1,83 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="0010_ddl_create_product_table" author="Katya K.">
+        <createTable schemaName="public" tableName="product" remarks="Товары">
+            <column name="id" type="bigserial" autoIncrement="true">
+            <constraints primaryKey="true" primaryKeyName="product_pkey" nullable="false"/>
+            </column>
+        </createTable>
+            <addColumn schemaName="public" tableName="product">
+            <column name="name" type="varchar" remarks="Наименование товара"/>
+            <column name="tea_fk_id" type="bigint"> </column>
+            <column name="coffee_fk_id" type="bigint"> </column>
+            <column name="water_fk_id" type="bigint"> </column>
+            <column name="disposable_tableware_fk_id" type="bigint"> </column>
+            <column name="pumps_fk_id" type="bigint"> </column>
+            <column name="cup_holders_fk_id" type="bigint"> </column>
+            <column name="bottle_racks_fk_id" type="bigint">
+            </column>
+            </addColumn>
+        <addForeignKeyConstraint
+                baseColumnNames="tea_fk_id"
+                baseTableName="product"
+                baseTableSchemaName="public"
+                constraintName="tea_fk_id"
+                referencedColumnNames="id"
+                referencedTableName="tea"
+                referencedTableSchemaName="public"/>
+        <addForeignKeyConstraint
+                baseColumnNames="coffee_fk_id"
+                baseTableName="product"
+                baseTableSchemaName="public"
+                constraintName="coffee_fk_id"
+                referencedColumnNames="id"
+                referencedTableName="coffee"
+                referencedTableSchemaName="public"/>
+        <addForeignKeyConstraint
+                baseColumnNames="water_fk_id"
+                baseTableName="product"
+                baseTableSchemaName="public"
+                constraintName="water_fk_id"
+                referencedColumnNames="id"
+                referencedTableName="water"
+                referencedTableSchemaName="public"/>
+        <addForeignKeyConstraint
+                baseColumnNames="disposable_tableware_fk_id"
+                baseTableName="product"
+                baseTableSchemaName="public"
+                constraintName="disposable_tableware_fk_id"
+                referencedColumnNames="id"
+                referencedTableName="disposable_tableware"
+                referencedTableSchemaName="public"/>
+        <addForeignKeyConstraint
+                baseColumnNames="pumps_fk_id"
+                baseTableName="product"
+                baseTableSchemaName="public"
+                constraintName="pumps_fk_id"
+                referencedColumnNames="id"
+                referencedTableName="pumps"
+                referencedTableSchemaName="public"/>
+        <addForeignKeyConstraint
+                baseColumnNames="cup_holders_fk_id"
+                baseTableName="product"
+                baseTableSchemaName="public"
+                constraintName="cup_holders_fk_id"
+                referencedColumnNames="id"
+                referencedTableName="cup_holders"
+                referencedTableSchemaName="public"/>
+        <addForeignKeyConstraint
+                baseColumnNames="bottle_racks_fk_id"
+                baseTableName="product"
+                baseTableSchemaName="public"
+                constraintName="bottle_racks_fk_id"
+                referencedColumnNames="id"
+                referencedTableName="bottle_racks"
+                referencedTableSchemaName="public"/>
+        <rollback>
+            <dropTable tableName="product"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

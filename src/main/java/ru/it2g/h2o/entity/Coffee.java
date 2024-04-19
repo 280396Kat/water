@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Objects;
 
 @AllArgsConstructor
@@ -33,9 +34,9 @@ public class Coffee {
     @Column(name = "is_stock")
     private Boolean isStock;
 
-    @ManyToOne
-    @JoinColumn(name = "fk_catalog_id")
-    private Catalog catalog;
+    @OneToMany
+    @JoinColumn(name = "coffee")
+    private List<Product> product;
 
     @Override
     public boolean equals(Object o) {

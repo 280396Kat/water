@@ -11,6 +11,14 @@ spring:
     show-sql: true
     generate-ddl: false
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: t60822484@gmail.com
+    password: ysxrgzrihzlwhwwo
+    properties:
+      mail:
+       debug: true
 jwt:
    secret: ${JWT_SECRET:koi5wesassg28jyui11dvkkm60zx}
    expiration: ${JWT_EXPIRATION:28800000}

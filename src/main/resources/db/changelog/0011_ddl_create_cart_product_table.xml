@@ -3,14 +3,14 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <changeSet id="0010_ddl_create_cart_product_table" author="Katya K.">
+    <changeSet id="0011_ddl_create_cart_product_table" author="Katya K.">
         <createTable schemaName="public" tableName="cart_product" remarks="Хранит информацию о твоарах в корзине">
             <column name="id" type="bigserial" autoIncrement="true">
                 <constraints primaryKey="true" primaryKeyName="cart_product_pkey" nullable="false"/>
             </column>
         </createTable>
         <addColumn schemaName="public" tableName="cart_product">
-            <column name="user_fk_id" type="bigint">
+            <column name="product_fk_id" type="bigint">
             </column>
         </addColumn>
         <addColumn schemaName="public" tableName="cart_product">
@@ -18,12 +18,12 @@
             </column>
         </addColumn>
         <addForeignKeyConstraint
-                baseColumnNames="user_fk_id"
+                baseColumnNames="product_fk_id"
                 baseTableName="cart_product"
                 baseTableSchemaName="public"
-                constraintName="user_fk_id"
+                constraintName="product_fk_id"
                 referencedColumnNames="id"
-                referencedTableName="users"
+                referencedTableName="product"
                 referencedTableSchemaName="public"/>
         <addForeignKeyConstraint
                 baseColumnNames="cart_fk_id"

@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Objects;
 
 @AllArgsConstructor
@@ -36,9 +37,9 @@ public class Water {
     @Column(name = "displacement")
     private Double displacement;
 
-    @ManyToOne
-    @JoinColumn(name = "fk_catalog_id")
-    private Catalog catalog;
+    @OneToMany
+    @JoinColumn(name = "water")
+    private List<Product> product;
 
     @Override
     public boolean equals(Object o) {

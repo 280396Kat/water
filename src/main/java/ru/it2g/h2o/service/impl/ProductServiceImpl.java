@@ -5,15 +5,15 @@ import org.springframework.stereotype.Service;
 import ru.it2g.h2o.dto.CatalogFilter;
 import ru.it2g.h2o.entity.*;
 import ru.it2g.h2o.repository.*;
-import ru.it2g.h2o.service.CatalogService;
+import ru.it2g.h2o.service.ProductService;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class CatalogServiceImpl implements CatalogService {
+public class ProductServiceImpl implements ProductService {
 
-    private final CatalogRepository catalogRepository;
+    private final ProductRepository catalogRepository;
     private final BottleRacksRepository bottleRacksRepository;
     private final CoffeeRepository coffeeRepository;
     private final CupHoldersRepository cupHoldersRepository;

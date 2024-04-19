@@ -29,12 +29,7 @@ public class User {
 
     private String roles;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "user_cart",
-            joinColumns = { @JoinColumn(name = "user_id") },
-            inverseJoinColumns = { @JoinColumn(name = "cart_id") }
-    )
+    @OneToMany(mappedBy = "user")
     private List<Cart> carts;
 
     @Override
