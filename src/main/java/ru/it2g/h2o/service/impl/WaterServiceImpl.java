@@ -2,8 +2,7 @@ package ru.it2g.h2o.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.it2g.h2o.dto.BottleRacksDto;
-import ru.it2g.h2o.dto.WaterDto;
+import ru.it2g.h2o.dto.waterDto.WaterDto;
 import ru.it2g.h2o.repository.WaterRepository;
 import ru.it2g.h2o.service.WaterService;
 

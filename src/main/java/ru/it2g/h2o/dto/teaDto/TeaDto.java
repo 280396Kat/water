@@ -1,18 +1,18 @@
-package ru.it2g.h2o.dto;
+package ru.it2g.h2o.dto.teaDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CupHoldersDto {
-
+public class TeaDto {
     private Long id;
 
     private String name;

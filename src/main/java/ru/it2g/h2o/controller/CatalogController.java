@@ -4,17 +4,16 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.it2g.h2o.dto.CoffeeDto;
-import ru.it2g.h2o.dto.DisposableTablewareDto;
-import ru.it2g.h2o.dto.TeaDto;
-import ru.it2g.h2o.dto.WaterDto;
+import ru.it2g.h2o.dto.coffeeDto.CoffeeDto;
+import ru.it2g.h2o.dto.disposableTablewareDto.DisposableTablewareDto;
+import ru.it2g.h2o.dto.teaDto.TeaDto;
+import ru.it2g.h2o.dto.waterDto.WaterDto;
 import ru.it2g.h2o.service.CoffeeService;
 import ru.it2g.h2o.service.DisposableTablewareService;
 import ru.it2g.h2o.service.TeaService;
 import ru.it2g.h2o.service.WaterService;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/catalog")

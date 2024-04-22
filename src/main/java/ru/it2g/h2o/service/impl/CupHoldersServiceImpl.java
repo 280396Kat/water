@@ -2,8 +2,7 @@ package ru.it2g.h2o.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.it2g.h2o.dto.CupHoldersDto;
-import ru.it2g.h2o.dto.TeaDto;
+import ru.it2g.h2o.dto.cupHoldersDto.CupHoldersDto;
 import ru.it2g.h2o.repository.CupHoldersRepository;
 import ru.it2g.h2o.service.CupHoldersService;
 

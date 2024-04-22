@@ -2,8 +2,7 @@ package ru.it2g.h2o.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.it2g.h2o.dto.DisposableTablewareDto;
-import ru.it2g.h2o.dto.TeaDto;
+import ru.it2g.h2o.dto.disposableTablewareDto.DisposableTablewareDto;
 import ru.it2g.h2o.repository.DisposableTablewareRepository;
 import ru.it2g.h2o.service.DisposableTablewareService;
 

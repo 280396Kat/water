@@ -1,6 +1,6 @@
 package ru.it2g.h2o.service;
 
-import ru.it2g.h2o.dto.CupHoldersDto;
+import ru.it2g.h2o.dto.cupHoldersDto.CupHoldersDto;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package ru.it2g.h2o.dto;
+package ru.it2g.h2o.dto.productItemDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

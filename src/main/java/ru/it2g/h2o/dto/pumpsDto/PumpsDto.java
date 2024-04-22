@@ -1,4 +1,4 @@
-package ru.it2g.h2o.dto;
+package ru.it2g.h2o.dto.pumpsDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class BottleRacksDto {
+public class PumpsDto {
 
     private Long id;
 

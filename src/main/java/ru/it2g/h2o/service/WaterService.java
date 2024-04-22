@@ -1,6 +1,6 @@
 package ru.it2g.h2o.service;
 
-import ru.it2g.h2o.dto.WaterDto;
+import ru.it2g.h2o.dto.waterDto.WaterDto;
 
 import java.util.List;
 

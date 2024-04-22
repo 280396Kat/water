@@ -2,7 +2,7 @@ package ru.it2g.h2o.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.it2g.h2o.dto.TeaDto;
+import ru.it2g.h2o.dto.teaDto.TeaDto;
 import ru.it2g.h2o.repository.TeaRepository;
 import ru.it2g.h2o.service.TeaService;
 

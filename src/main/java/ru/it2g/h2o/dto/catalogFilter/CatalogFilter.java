@@ -1,27 +1,27 @@
-package ru.it2g.h2o.dto;
+package ru.it2g.h2o.dto.catalogFilter;
 
+import liquibase.pro.packaged.S;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class TeaDto {
-    private Long id;
+public class CatalogFilter {
+
+    private Long categoryId;
+
+    private BigDecimal from;
+
+    private BigDecimal to;
 
     private String name;
 
-    private BigDecimal price;
-
-    private String description;
-
     private Integer vendorCode;
 
-    private String inStock;
 }

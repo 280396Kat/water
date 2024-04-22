@@ -1,7 +1,7 @@
 package ru.it2g.h2o.service;
 
-import ru.it2g.h2o.dto.CartDto;
-import ru.it2g.h2o.dto.ProductItemDto;
+import ru.it2g.h2o.dto.cartDto.CartDto;
+import ru.it2g.h2o.dto.productItemDto.ProductItemDto;
 
 import java.util.List;
 

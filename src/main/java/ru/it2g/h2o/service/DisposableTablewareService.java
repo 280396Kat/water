@@ -1,6 +1,6 @@
 package ru.it2g.h2o.service;
 
-import ru.it2g.h2o.dto.DisposableTablewareDto;
+import ru.it2g.h2o.dto.disposableTablewareDto.DisposableTablewareDto;
 
 import java.util.List;
 

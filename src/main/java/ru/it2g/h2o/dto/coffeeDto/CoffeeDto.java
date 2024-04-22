@@ -1,4 +1,4 @@
-package ru.it2g.h2o.dto;
+package ru.it2g.h2o.dto.coffeeDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class DisposableTablewareDto {
+public class CoffeeDto {
 
     private Long id;
 

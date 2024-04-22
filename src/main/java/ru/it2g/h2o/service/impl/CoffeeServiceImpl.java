@@ -2,8 +2,7 @@ package ru.it2g.h2o.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.it2g.h2o.dto.CoffeeDto;
-import ru.it2g.h2o.dto.TeaDto;
+import ru.it2g.h2o.dto.coffeeDto.CoffeeDto;
 import ru.it2g.h2o.repository.CoffeeRepository;
 import ru.it2g.h2o.service.CoffeeService;
 

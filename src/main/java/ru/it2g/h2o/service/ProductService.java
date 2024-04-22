@@ -1,6 +1,6 @@
 package ru.it2g.h2o.service;
 
-import ru.it2g.h2o.dto.CatalogFilter;
+import ru.it2g.h2o.dto.catalogFilter.CatalogFilter;
 
 import java.util.List;
 

@@ -2,7 +2,7 @@ package ru.it2g.h2o.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.it2g.h2o.dto.CatalogFilter;
+import ru.it2g.h2o.dto.catalogFilter.CatalogFilter;
 import ru.it2g.h2o.entity.*;
 import ru.it2g.h2o.repository.*;
 import ru.it2g.h2o.service.ProductService;

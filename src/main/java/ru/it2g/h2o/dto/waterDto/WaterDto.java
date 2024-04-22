@@ -1,6 +1,5 @@
-package ru.it2g.h2o.dto;
+package ru.it2g.h2o.dto.waterDto;
 
-import liquibase.pro.packaged.S;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,16 +11,17 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CatalogFilter {
+public class WaterDto {
 
-    private Long categoryId;
-
-    private BigDecimal from;
-
-    private BigDecimal to;
+    private Long id;
 
     private String name;
 
+    private BigDecimal price;
+
+    private String description;
+
     private Integer vendorCode;
 
+    private String inStock;
 }
