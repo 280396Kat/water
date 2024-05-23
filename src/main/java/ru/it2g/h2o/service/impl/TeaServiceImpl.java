@@ -16,7 +16,7 @@ public class TeaServiceImpl implements TeaService {
     private final TeaRepository teaRepository;
 
     @Override
-    public List<TeaDto> getAllIsStockTea() {
+    public List<TeaDto> getAllIsStockTea() { //
         return teaRepository.findAllIsStockTea().stream()
                 .map(entity -> TeaDto.builder()
                         .id(entity.getId())
