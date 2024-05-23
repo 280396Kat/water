@@ -13,7 +13,7 @@ import java.util.Objects;
 @Getter
 @Builder
 @Entity
-public class Cart {
+public class Cart { // класс
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
