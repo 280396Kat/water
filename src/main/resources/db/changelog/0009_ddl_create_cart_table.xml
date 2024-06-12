@@ -14,11 +14,11 @@
         </column>
         </addColumn>
         <addForeignKeyConstraint
-                baseColumnNames="user_fk_id"
+                baseColumnNames="user_fk_id"  //base - колонка в которой создаю
                 baseTableName="cart"
                 baseTableSchemaName="public"
                 constraintName="user_fk_id"
-                referencedColumnNames="id"
+                referencedColumnNames="id" // на какой атрибут в какой колонке буду ссылаться
                 referencedTableName="users"
                 referencedTableSchemaName="public"/>
         <rollback>
