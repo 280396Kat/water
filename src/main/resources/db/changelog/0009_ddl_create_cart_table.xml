@@ -3,7 +3,7 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <changeSet id="0008_ddl_create_cart_table" author="Katya K.">
+    <changeSet id="0009_ddl_create_cart_table" author="Katya K.">
         <createTable schemaName="public" tableName="cart" remarks="Корзина">
             <column name="id" type="bigserial" autoIncrement="true">
                 <constraints primaryKey="true" primaryKeyName="cart_pkey" nullable="false"/>
@@ -14,11 +14,11 @@
         </column>
         </addColumn>
         <addForeignKeyConstraint
-                baseColumnNames="user_fk_id"  //base - колонка в которой создаю
+                baseColumnNames="user_fk_id"
                 baseTableName="cart"
                 baseTableSchemaName="public"
                 constraintName="user_fk_id"
-                referencedColumnNames="id" // на какой атрибут в какой колонке буду ссылаться
+                referencedColumnNames="id"
                 referencedTableName="users"
                 referencedTableSchemaName="public"/>
         <rollback>
