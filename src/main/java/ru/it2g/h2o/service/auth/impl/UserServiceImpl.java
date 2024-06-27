@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService, AuthService {
 
     private final UserEventPublisher userEventPublisher;
 
-    private final KafkaTemplate<String, Object> kafkaTemplate;
+    private final KafkaTemplate<String, String> kafkaTemplate;
 
     @Override
     public Optional<User> getByUsername(String username) {
@@ -80,7 +80,7 @@ public class UserServiceImpl implements UserService, AuthService {
         if(isLogin) {
             StatisticDto statisticDto = new StatisticDto();
             statisticDto.setName(username);
-            kafkaTemplate.send("statistic", statisticDto);
+            kafkaTemplate.send("statistic", statisticDto.getName());
         }
         return isLogin;
     }

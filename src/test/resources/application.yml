@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    url: jdbc:tc:postgresql:15.0:///water
+    username: username
+    password: password
+  liquibase:
+    enabled: false
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: t60822484@gmail.com
+    password: ysxrgzrihzlwhwwo
+    properties:
+      mail:
+        debug: true
+  jpa:
+    show-sql: true
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+jwt:
+  secret: ${JWT_SECRET:koi5wesassg28jyui11dvkkm60zx}
+  expiration: ${JWT_EXPIRATION:28800000}
