@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface WaterRepository extends JpaRepository<Water, Long> {
 
-    @Query(value = "select * from water where is_stock = true AND displacement BETWEEN '0,2' AND '5'", nativeQuery = true)
+    @Query(value = "select * from water where is_stock = true AND displacement BETWEEN '0.2' AND '5'", nativeQuery = true)
     List<Water> findAllIsStockUpToFiveLiters();
 
 

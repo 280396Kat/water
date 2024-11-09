@@ -14,6 +14,9 @@ spring:
     properties:
       mail:
         debug: true
+  telegram:
+    bot.name=A2HSochiBot
+    bot.token=7907283924:AAGjdmKg9yRRz0Ho7pCIdwhEzCVS4wBnkN8
   jpa:
     show-sql: true
     generate-ddl: false
@@ -23,3 +26,18 @@ spring:
 jwt:
   secret: ${JWT_SECRET:koi5wesassg28jyui11dvkkm60zx}
   expiration: ${JWT_EXPIRATION:28800000}
+
+
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    url: jdbc:tc:postgresql:15.0:///page
+    username: username
+    password: password
+  liquibase:
+    enabled: false

@@ -10,10 +10,10 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.util.CollectionUtils;
 import ru.it2g.h2o.WaterApplication;
-import ru.it2g.h2o.dto.teaDto.TeaDto;
-import ru.it2g.h2o.entity.Tea;
-import ru.it2g.h2o.mapper.TeaMapper;
-import ru.it2g.h2o.repository.TeaRepository;
+import ru.it2g.h2o.dto.pumpsDto.PumpsDto;
+import ru.it2g.h2o.entity.Pumps;
+import ru.it2g.h2o.mapper.PumpsMapper;
+import ru.it2g.h2o.repository.PumpsRepository;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -23,36 +23,36 @@ import static org.junit.jupiter.api.Assertions.*;
 @ActiveProfiles("test")
 @SpringBootTest(classes = WaterApplication.class)
 @ExtendWith(SpringExtension.class)
-class TeaServiceImplTest {
+class PumpsServiceImplTest {
     @Autowired
-    private TeaServiceImpl teaService;
+    private PumpsServiceImpl pumpsService;
 
     @Autowired
-    private TeaRepository teaRepository;
+    private PumpsRepository pumpsRepository;
 
     @Autowired
-    private TeaMapper teaMapper;
+    private PumpsMapper pumpsMapper;
 
     @Before
     public void cleanUp() {
-        teaRepository.deleteAll();
+        pumpsRepository.deleteAll();
     }
 
     @Test
-    void getAllIsStockTea() {
-        TeaDto tmp = teaDto();
-        Tea entity = teaMapper.toEntity(tmp);
-        teaRepository.save(entity);
-        List<TeaDto> teaDtoList = teaService.getAllIsStockTea();
-        Assertions.assertFalse(!CollectionUtils.isEmpty(teaDtoList));
+    void getAllIsStockPumps() {
+        PumpsDto tmp = pumpsDto();
+        Pumps entity = pumpsMapper.toEntity(tmp);
+        pumpsRepository.save(entity);
+        List<PumpsDto> pumpsDtoList = pumpsService.getAllIsStockPumps();
+        Assertions.assertFalse(!CollectionUtils.isEmpty(pumpsDtoList));
     }
 
-    private TeaDto teaDto() {
-        return TeaDto.builder()
-                .name("Чай.")
-                .price(BigDecimal.valueOf(1100))
-                .description("Чай черный рассыпной Ассам.")
-                .vendorCode(2403)
+    private PumpsDto pumpsDto() {
+        return PumpsDto.builder()
+                .name("Помпа.")
+                .price(BigDecimal.valueOf(1800))
+                .description("Помпа электрическая.")
+                .vendorCode(2803)
                 .inStock("В наличии.")
                 .build();
     }
