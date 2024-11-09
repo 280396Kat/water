@@ -19,10 +19,13 @@ spring:
     properties:
       mail:
        debug: true
+  telegram:
+    bot.name=A2HSochiBot
+    bot.token=7907283924:AAGjdmKg9yRRz0Ho7pCIdwhEzCVS4wBnkN8
 
   kafka:
     consumer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: kafka:9092
       group-id: group-id
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -33,10 +36,13 @@ spring:
          trusted:
           packages:*
     producer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: kafka:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
 jwt:
    secret: ${JWT_SECRET:koi5wesassg28jyui11dvkkm60zx}
    expiration: ${JWT_EXPIRATION:28800000}
+
+server:
+  port: 8081
